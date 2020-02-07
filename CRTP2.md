@@ -30,7 +30,7 @@ Elle existe toujours mais ne contient rien.
 ## Programmation BASH
 
 ### Exercice 2 
-Mot de passe : 
+##Mot de passe : 
 #!/bin/bash
 
 
@@ -41,7 +41,7 @@ then
 	echo 'GG mec' 
 fi 
 
-users : 
+##users : 
 #!/bin/bash
 
 if  [ $# != 1 ]
@@ -56,7 +56,7 @@ echo "Nom d'utilisateur non présent"
 fi
 fi
 
-isnumber :
+##isnumber :
 #!/bin/bash
 
 function is_number()
@@ -79,7 +79,7 @@ else
 	echo 'Ce nest pas un réel'
 fi
 
-facto: 
+##facto: 
 #!/bin/bash
 num=$1
 
@@ -91,6 +91,30 @@ do
 done
 
 echo $fact
+
+##jeu
+#!/bin/bash
+
+correct=$RANDOM
+corr=$(($correct % 1000))
+echo $corr
+rep=0
+
+while [ $rep != $corr ] 
+do
+
+read -p "Entrez votre supposition : " rep
+
+if [ $rep -gt $corr ]
+then 
+	echo "Vous etes au dessus !"
+elif [ $rep -lt $corr ]
+then
+	echo "vous etes en dessous !"
+else  
+	echo "gg"
+fi
+done
 
 
 
