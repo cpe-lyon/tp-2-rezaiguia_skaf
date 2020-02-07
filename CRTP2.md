@@ -30,7 +30,7 @@ Elle existe toujours mais ne contient rien.
 ## Programmation BASH
 
 ### Exercice 2 
-##Mot de passe : 
+## Mot de passe : 
 #!/bin/bash
 
 
@@ -41,7 +41,7 @@ then
 	echo 'GG mec' 
 fi 
 
-##users : 
+## users : 
 #!/bin/bash
 
 if  [ $# != 1 ]
@@ -56,7 +56,7 @@ echo "Nom d'utilisateur non présent"
 fi
 fi
 
-##isnumber :
+## isnumber :
 #!/bin/bash
 
 function is_number()
@@ -92,7 +92,8 @@ done
 
 echo $fact
 
-##jeu
+## jeu
+
 #!/bin/bash
 
 correct=$RANDOM
