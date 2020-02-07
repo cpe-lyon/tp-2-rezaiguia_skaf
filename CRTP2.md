@@ -79,7 +79,8 @@ else
 	echo 'Ce nest pas un réel'
 fi
 
-##facto: 
+## facto:
+
 #!/bin/bash
 num=$1
 
