@@ -102,7 +102,7 @@ corr=$(($correct % 1000))
 echo $corr
 rep=0
 
-while [ $rep != $corr ] 
+while [ $rep != $corr ]  
 do
 
 read -p "Entrez votre supposition : " rep
