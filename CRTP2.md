@@ -164,6 +164,83 @@ fi
 
 done
 
+### Statistique
+
+
+#!/bin/bash
+
+function is_entier() {
+
+	if [ $(($1%1)) -eq 0 ]; then
+
+		return 1
+
+	else
+
+		return 0
+
+	fi
+
+}
+
+min=$1
+
+max=$1
+
+total=$#
+
+while (("$#")); do
+
+	if [ $1 -lt 100 -a $1 -gt -100 ];then
+
+		is_entier $1
+
+		if [ $? -eq 1 ]; then
+
+			somme=$((somme+$1))
+
+
+			if [ $1 -gt $max ]
+
+			then
+
+				max=$1
+
+			elif [ $1 -lt $min ]
+
+			then
+
+				min=$1
+
+			fi
+
+		else
+
+			echo "non"
+
+
+		fi
+
+	else
+		echo "Nombre pas conforme, veuillez recommencer"
+
+		exit
+
+	fi
+
+	shift
+done
+
+moyenne=$(($somme/$total))
+
+echo "moyenne : $moyenne"
+
+echo " min : $min"
+
+echo " max : $max"
+
+
+
 
 
 
