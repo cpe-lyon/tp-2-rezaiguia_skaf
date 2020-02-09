@@ -36,59 +36,93 @@ Elle existe toujours mais ne contient rien.
 
 PASSWORD='1234'
 read -s -p 'Saisissez votre mot de passe :' mdp
+
 if [ $PASSWORD = $mdp ]
+
 then 
+
 	echo 'GG mec' 
+	
 fi 
 
+
 ## users : 
+
 #!/bin/bash
 
 if  [ $# != 1 ]
+
 then
+
 	echo "Utilisation : users.sh nomdutilisateur"
+	
 else
 
+
 if cut -d: -f1 /etc/passwd | sort -r | grep -q $1 ; then
+
 echo "Nom d'utilisateur présent"
+
 else 
+
 echo "Nom d'utilisateur non présent"
-fi
+
 fi
 
+fi
+
+
 ## isnumber :
+
 #!/bin/bash
 
 function is_number()
 {
+
 re='^[+-]?[0-9]+([.][0-9]+)?$'
 
 if ! [[ $1 =~ $re ]] ; then 
+
 	return 1
+	
 else 
+
 	return 0
+	
 fi
 }
 
 
 is_number $1
+
 if [ $? = 0 ] 
+
 then
+
+
 	echo  'Cest un réel'
 else 
+
 	echo 'Ce nest pas un réel'
+	
 fi
 
 ## facto:
 
 #!/bin/bash
+
 num=$1
 
 fact=1
+
 while [ $num -gt 1 ]
+
 do
+
 	fact=$((fact * num))
+	
 	num=$((num -1))
+	
 done
 
 echo $fact
@@ -98,24 +132,36 @@ echo $fact
 #!/bin/bash
 
 correct=$RANDOM
+
 corr=$(($correct % 1000))
+
 echo $corr
+
 rep=0
 
 while [ $rep != $corr ]  
+
 do
 
 read -p "Entrez votre supposition : " rep
 
 if [ $rep -gt $corr ]
+
 then 
 	echo "Vous etes au dessus !"
+	
 elif [ $rep -lt $corr ]
+
 then
+
 	echo "vous etes en dessous !"
+	
 else  
+
 	echo "gg"
+	
 fi
+
 done
 
 
